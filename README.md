@@ -1,11 +1,3 @@
-olarak yazmanız gerekmektedir. Sonrasında tek yapmanız gereken
-
-npm install && npm start diyerek projeyi başlatmanız.
-
-Not: nodemon kurulu değilse npm i nodemon yapmayı unutmayın!
-
-
-
 # Twitch-Chat-Bot
 
 İçerisinde küfür filtresi olan ve küfür eden kullanıcıyı banlayan, geliştirmeye açık bir proje.
