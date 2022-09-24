@@ -1,0 +1,16 @@
+{
+  "name": "twitch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "Hüsnü Lübnan",
+  "license": "ISC",
+  "dependencies": {
+    "bad-words": "^3.0.4",
+    "dotenv": "^16.0.2",
+    "tmi.js": "^1.8.5"
+  }
+}

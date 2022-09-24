@@ -1,0 +1,11 @@
+### react ###
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+.env
+.env.local
+.env.development.local
+node_modules
+bower_components
