@@ -8,15 +8,13 @@ const client = new tmi.Client({
   options: { debug: true },
   connection: { reconnect: true },
   identity: {
-    username: "hsnLubnan",
+    username: process.env.TWITCH_USERNAME,
     password: process.env.TWITCH_OAUTH_TOKEN,
   },
-  channels: ["hsnlubnan"],
+  channels: [process.env.TWITCH_USERNAME],
 });
 
 client.connect();
-
-var users = [];
 
 var lists = filter.list;
 
@@ -34,19 +32,22 @@ client.on("message", (channel, tags, message, self) => {
     console.log(message);
   }
 
-  if (message.toLowerCase() === "!temizle" && tags.username === "hsnlubnan") {
-    client.clear("hsnlubnan");
+  if (
+    message.toLowerCase() === "!temizle" &&
+    tags.username === process.env.TWITCH_USERNAME
+  ) {
+    client.clear(process.env.TWITCH_USERNAME);
   }
 
   if (lists.find((word) => word === message.toLowerCase())) {
     client.say(channel, `@${tags.username} küfür etme`);
 
     client.ban(
-      "hsnlubnan",
+      process.env.TWITCH_USERNAME,
       tags.username,
       `${message} mesajınız yüzünden ban yediniz.`
     );
 
-    client.deletemessage("hsnlubnan", message.id);
+    client.deletemessage(process.env.TWITCH_USERNAME, message.id);
   }
 });
